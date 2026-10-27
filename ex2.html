@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Website</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            background-color: navy;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .section {
+            background-color: white;
+            padding: 15px;
+            margin: 15px;
+            border: 1px solid gray;
+        }
+
+        .navbar {
+            background-color: lightblue;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>My Student Website</h1>
+        <p>Welcome to my webpage</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#students">Students</a>
+        <a href="#register">Register</a>
+    </div>
+
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>I am learning HTML and CSS.</p>
+
+        <h3>My Skills</h3>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Python</li>
+        </ul>
+    </div>
+
+    <div class="section" id="students">
+        <h2>Student Table</h2>
+
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+            <tr>
+                <td>Hawi</td>
+                <td>Software Engineering</td>
+            </tr>
+            <tr>
+                <td>Abel</td>
+                <td>Computer Science</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" id="register">
+        <h2>Registration Form</h2>
+
+        <form>
+            <label for="studentName">Name:</label>
+            <input type="text" id="studentName">
+
+            <br><br>
+
+            <label for="studentEmail">Email:</label>
+            <input type="email" id="studentEmail">
+
+            <br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

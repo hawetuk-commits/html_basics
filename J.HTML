@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page Layout Structure</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+/* General Reset & Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+/* CSS Grid Container Setup */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 8px;
+    background-color: brown;
+    padding: 8px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 2px solid brown;
+}
+
+/* Header Styling */
+.header {
+    grid-column: 1 / 3;
+    background-color: burlywood;
+    border: 1px solid brown;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Sign Up Box Styling */
+.signup-box {
+    grid-column: 1/2;
+    background-color: lightblue;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+    ), url("images/HAWI\ 630.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid brown;
+    padding: 15px;
+    position: relative;
+    color: white;
+}
+
+/* Sign Up Input Fields */
+.signup-box input {
+    display: block;
+    width: 85%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    color: black;
+}
+
+/* Main Section / Exploring Styling */
+.main-section {
+    grid-column: 2/3;
+    background-color: darkgreen;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+    ), url("images/HAWI\ 630.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid brown;
+    padding: 20px;
+    position: relative;
+    min-height: 220px;
+    color: white;
+}
+
+/* Explore Title */
+.explore-title {
+    color: lime;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+/* Welcome Text */
+.welcome-text {
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* Labels Positioned Inside Boxes */
+.label-title {
+    font-size: 13px;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.right-label {
+    text-align: right;
+}
+
+/* Article Styling */
+.article-box {
+    grid-column: 1 / 2;
+    background-color: gray;
+    border: 1px solid brown;
+    padding: 60px 20px;
+    text-align: center;
+    color: black;
+}
+
+/* Aside Wrapper & Boxes */
+.aside-wrapper {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.aside-box {
+    background-color: gray;
+    border: 1px solid brown;
+    padding: 30px 10px;
+    text-align: center;
+    color: black;
+}
+
+/* Footer Styling */
+.footer {
+    grid-column: 1 / 3;
+    background-color: lightgray;
+    border: 1px solid brown;
+    text-align: center;
+    padding: 15px;
+    color: black;
+}
+
+/* Button Styles */
+.btn {
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Green Button */
+.green-btn {
+    background-color: teal;
+}
+
+/* Blue Button */
+.blue-btn {
+    background-color: steelblue;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background-color: blue;
+    display: block;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">Header</header>
+
+        <!-- SignUp Section (Left Top) -->
+        <div class="signup-box">
+            <div class="label-title">SignUp</div>
+            <form>
+                <input type="text" placeholder="Enter Email address">
+                <input type="text" placeholder="Enter User Name">
+                <input type="password" placeholder="Enter Password">
+                <div class="form-buttons">
+                    <button type="button" class="btn green-btn">SignUp</button>
+                    <button type="button" class="btn blue-btn">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Section / Exploring (Right Top) -->
+        <section class="main-section">
+            <div class="label-title right-label">Section</div>
+            <h2 class="explore-title">Exploring</h2>
+            <p class="welcome-text">Wel come to sofumer</p>
+            <button class="btn read-more-btn">Read More</button>
+        </section>
+
+        <!-- Article (Left Bottom) -->
+        <article class="article-box">
+            Article
+        </article>
+
+        <!-- Asides (Right Bottom) -->
+        <div class="aside-wrapper">
+            <aside class="aside-box">Aside 1</aside>
+            <aside class="aside-box">Aside 2</aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            Footer
+        </footer>
+    </div>
+
+</body>
+</html>

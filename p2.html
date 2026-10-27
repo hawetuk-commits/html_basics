@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Web Programming Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f1f5f9;
+            color: #243746;
+        }
+
+        a {
+            color: #0b6575;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            background: #103e4c;
+            color: white;
+            padding: 18px 0;
+        }
+
+        .header-content,
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #226174;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid #db9c21;
+            outline-offset: 3px;
+        }
+
+        .welcome {
+            background: #dceef0;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .welcome h1 {
+            margin: 0 0 12px;
+            color: #103e4c;
+            font-size: 36px;
+        }
+
+        .welcome p {
+            max-width: 650px;
+            margin: 0 auto 24px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #0b6575;
+            color: white;
+            padding: 11px 22px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #084c59;
+        }
+
+        main {
+            padding: 30px 0;
+        }
+
+        section {
+            scroll-margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border: 1px solid #dbe4eb;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        h2,
+        h3 {
+            color: #103e4c;
+            margin-top: 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .hero-grid img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .two-columns > * {
+            min-width: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .notice {
+            padding: 12px;
+            background: #fff5d9;
+            border-left: 4px solid #db9c21;
+            border-radius: 4px;
+        }
+
+        .form-card {
+            max-width: 850px;
+            margin: 0 auto 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-heading p {
+            color: #526572;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .field {
+            min-width: 0;
+        }
+
+        .field > label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]),
+        select,
+        textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #aebec9;
+            border-radius: 6px;
+            background: white;
+            color: #243746;
+            font: inherit;
+        }
+
+        input[type="file"] {
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 15px;
+            border: 1px solid #aebec9;
+            border-radius: 6px;
+        }
+
+        legend {
+            padding: 0 6px;
+            font-weight: bold;
+        }
+
+        .options label {
+            display: block;
+            margin: 7px 0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .secondary {
+            background: #e2e8f0;
+            color: #243746;
+        }
+
+        .secondary:hover {
+            background: #cbd5e1;
+        }
+
+        .small-text {
+            color: #526572;
+            font-size: 14px;
+        }
+
+        .feedback-form {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .feedback-form .field {
+            margin-bottom: 18px;
+        }
+
+        .members {
+            padding-left: 22px;
+        }
+
+        footer {
+            background: #103e4c;
+            color: #e1edf0;
+            padding: 35px 0 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        footer h3 {
+            color: #f6cf79;
+        }
+
+        footer a {
+            display: block;
+            color: #e1edf0;
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            overflow-wrap: anywhere;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid #47717d;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .header-content {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid img {
+                height: 260px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .welcome {
+                padding: 35px 15px;
+            }
+
+            .welcome h1 {
+                font-size: 28px;
+            }
+
+            .two-columns,
+            .form-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            nav {
+                gap: 4px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <header>
+        <div class="container header-content">
+            <a class="logo" href="#home">Our Web Project</a>
+
+            <nav aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#news">Latest News</a>
+                <a href="#resources">Resources</a>
+                <a href="#feedback">Feedback</a>
+                <a href="#members">Group Members</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="welcome">
+        <div class="container">
+            <h1>Welcome to Our Web Programming Project</h1>
+            <p>
+                Learning HTML and CSS through creativity,
+                teamwork, and practical experience.
+            </p>
+            <a class="button" href="#registration">Student Registration</a>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <section class="card hero-grid" aria-label="Project introduction">
+            <img src="jimma1.jpg" alt="Campus building in Jimma">
+
+            <div class="hero-text">
+                <h2>Learn. Create. Improve.</h2>
+                <p>
+                    Our first web programming project combines
+                    information, images, and a student registration form.
+                </p>
+            </div>
+
+            <img src="jimma2.jpg" alt="Campus grounds and surrounding buildings">
+        </section>
+
+        <section class="card" id="about">
+            <h2>Discover Jimma</h2>
+            <p>
+                This section introduces Jimma through the kebele
+                and kingdom lists included in our laboratory sample.
+            </p>
+            <p class="notice">
+                Explore the information below and register your
+                academic interests using the student form.
+            </p>
+        </section>
+
+        <div class="two-columns">
+            <section class="card">
+                <h2>Jimma Town Kebeles</h2>
+                <ul>
+                    <li>Bosa Addis</li>
+                    <li>Bocho Bore</li>
+                    <li>Ginjo Giduru</li>
+                    <li>Hirmata</li>
+                    <li>Addis Ketama</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Five Kingdoms Listed in the Sample</h2>
+                <ol>
+                    <li>Jimma</li>
+                    <li>Guma</li>
+                    <li>Gomma</li>
+                    <li>Gera</li>
+                    <li>Limmu Ennarya</li>
+                </ol>
+            </section>
+        </div>
+
+        <section class="card" id="news">
+            <h2>Latest Class News</h2>
+            <h3>Our Next Laboratory Session</h3>
+            <p>
+                Each project group will recreate the sample webpage
+                using HTML and CSS, improve its design, and explain
+                the contribution of each group member.
+            </p>
+        </section>
+
+        <section class="card form-card" id="registration">
+            <div class="section-heading">
+                <h2>Student Registration</h2>
+                <p>Complete your details below. Fields marked * are required.</p>
+            </div>
+
+            <p class="notice" id="registration-note">
+                Classroom demonstration only. Do not enter a real password
+                or sensitive personal information. A server connection is
+                needed to save registrations.
+            </p>
+
+            <form method="post" enctype="multipart/form-data"
+                  aria-describedby="registration-note">
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="full_name"
+                               placeholder="Enter your full name"
+                               autocomplete="name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="student-id">Student ID *</label>
+                        <input type="text" id="student-id" name="student_id"
+                               placeholder="Enter your student ID" required>
+                    </div>
+
+                    <fieldset class="options">
+                        <legend>Gender</legend>
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="male">
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="not-specified">
+                            Prefer not to say
+                        </label>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="student@example.com"
+                               autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="Enter your phone number"
+                               autocomplete="tel">
+                    </div>
+
+                    <div class="field">
+                        <label for="birth-date">Birth Date</label>
+                        <input type="date" id="birth-date" name="birth_date"
+                               autocomplete="bday">
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="department">Department *</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select your department</option>
+                            <option value="software">Software Engineering</option>
+                            <option value="computer-science">Computer Science</option>
+                            <option value="it">Information Technology</option>
+                            <option value="civil">Civil Engineering</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="options full-width">
+                        <legend>Which fields are you interested in?</legend>
+                        <label>
+                            <input type="checkbox" name="interests" value="software">
+                            Software Engineering
+                        </label>
+                        <label>
+                            <input type="checkbox" name="interests" value="ai">
+                            Artificial Intelligence
+                        </label>
+                        <label>
+                            <input type="checkbox" name="interests" value="data-science">
+                            Data Science
+                        </label>
+                        <label>
+                            <input type="checkbox" name="interests" value="civil">
+                            Civil Engineering
+                        </label>
+                    </fieldset>
+
+                    <div class="field full-width">
+                        <label for="picture">Upload Picture</label>
+                        <input type="file" id="picture" name="picture"
+                               accept="image/*">
+                    </div>
+
+                    <div class="field">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" name="username"
+                               placeholder="Choose a username"
+                               autocomplete="username" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Demo Password *</label>
+                        <input type="password" id="password" name="password"
+                               placeholder="Use a practice password only"
+                               autocomplete="new-password" minlength="8"
+                               aria-describedby="password-help" required>
+                        <small id="password-help" class="small-text">
+                            Enter at least 8 characters. Do not use a real password.
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button class="button" type="submit">Submit</button>
+                    <button class="button secondary" type="reset">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card" id="feedback">
+            <div class="section-heading">
+                <h2>Give Your Feedback</h2>
+                <p>Share your ideas for improving our class project.</p>
+            </div>
+
+            <form class="feedback-form" method="post">
+                <div class="field">
+                    <label for="feedback-name">Your Name</label>
+                    <input type="text" id="feedback-name" name="feedback_name"
+                           autocomplete="name" placeholder="Enter your name">
+                </div>
+
+                <div class="field">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" rows="5"
+                              placeholder="Write your feedback here"
+                              required></textarea>
+                </div>
+
+                <p class="small-text">
+                    This demonstration form is not connected to a server.
+                </p>
+
+                <button class="button" type="submit">Submit Feedback</button>
+            </form>
+        </section>
+
+        <section class="card" id="members">
+            <h2>Our Project Group</h2>
+            <p>Replace the entries below with your actual group details.</p>
+
+            <ul class="members">
+                <li>Member 1 — Page structure and navigation</li>
+                <li>Member 2 — Colors, typography, and layout</li>
+                <li>Member 3 — Registration and feedback forms</li>
+                <li>Member 4 — Images, content, and testing</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <section>
+                    <h3>Follow Us</h3>
+                    <p>Add your group's social profile links here.</p>
+                </section>
+
+                <section>
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#news">Latest News</a>
+                    <a href="#registration">Registration</a>
+                    <a href="#members">Group Members</a>
+                </section>
+
+                <section id="resources">
+                    <h3>Learning Resources</h3>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+                        Learn HTML
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                        Learn CSS
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                        Learn JavaScript
+                    </a>
+                    <a href="https://react.dev/learn">
+                        Learn React
+                    </a>
+                </section>
+
+                <section>
+                    <h3>Contact Us</h3>
+                    <p>Third-Year Software Students</p>
+                    <p>Email: Add your group email</p>
+                    <p>Phone: Add your group phone</p>
+                    <p>Address: Add your location</p>
+                </section>
+
+            </div>
+
+            <div class="copyright">
+                <p>&copy; Our Web Programming Group Project</p>
+                <a href="#home">Back to top ↑</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
